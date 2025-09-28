@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Swiggy Clone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #fc8019;
+      color: white;
+      position: sticky;
+      top: 0;
+    }
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .navbar input {
+      padding: 8px;
+      width: 250px;
+      border-radius: 4px;
+      border: none;
+    }
+    .navbar .menu {
+      display: flex;
+      gap: 20px;
+    }
+    .navbar .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      color: rgb(226, 218, 216);
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin: 0 0 20px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+    .hero input {
+      padding: 12px;
+      width: 300px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    /* Restaurant Cards */
+    .restaurant-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .restaurant-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .restaurant-card:hover {
+      transform: scale(1.05);
+    }
+    .restaurant-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .restaurant-card .info {
+      padding: 15px;
+    }
+    .restaurant-card h3 {
+      margin: 0 0 10px;
+    }
+    .restaurant-card p {
+      margin: 0;
+      color: #555;
+    }
+
+    /* Cart */
+    .cart {
+      padding: 40px;
+      background: #fff7ed;
+    }
+    .cart h2 {
+      margin-bottom: 20px;
+    }
+    .cart table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .cart table th, .cart table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    .cart .checkout {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #fc8019;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    footer a {
+      color: #fc8019;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Swiggy Clone</div>
+    <input type="text" placeholder="Search for food or restaurants">
+    <div class="menu">
+      <a href="#">Login</a>
+      <a href="#">Cart</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Order food from your favorite restaurants</h1>
+    <input type="text" placeholder="Enter your location">
+  </div>
+
+  <!-- Restaurants -->
+  <section class="restaurant-list">
+    <div class="restaurant-card">
+      <img src="./asset/img/pizza.jpg" alt="Pizza Place">
+      <div class="info">
+        <h3>Pizza Paradise</h3>
+        <p>Italian, Fast Food</p>
+        <p>⭐ 4.2 • 30 mins • ₹400 for two</p>
+      </div>
+    </div>
+    <div class="restaurant-card">
+      <img src="./asset/img/burger.jpg" alt="Burger Hub">
+      <div class="info">
+        <h3>Burger Hub</h3>
+        <p>American, Snacks</p>
+        <p>⭐ 4.0 • 25 mins • ₹300 for two</p>
+      </div>
+    </div>
+    <div class="restaurant-card">
+      <img src="./asset/img/biryani.jpg" alt="Biryani House">
+      <div class="info">
+        <h3>Biryani House</h3>
+        <p>Indian, Mughlai</p>
+        <p>⭐ 4.5 • 35 mins • ₹500 for two</p>
+      </div>
+    </div>
+    <div class="restaurant-card">
+      <img src="./asset/img/latte.jpg" alt="Cafe Latte">
+      <div class="info">
+        <h3>Cafe Latte</h3>
+        <p>Coffee, Desserts</p>
+        <p>⭐ 4.3 • 20 mins • ₹200 for two</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Section -->
+  <div class="cart">
+    <h2>Your Cart</h2>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Margherita Pizza</td>
+        <td>1</td>
+        <td>₹250</td>
+      </tr>
+      <tr>
+        <td>Cold Coffee</td>
+        <td>2</td>
+        <td>₹180</td>
+      </tr>
+    </table>
+    <button class="checkout">Proceed to Checkout</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mini Swiggy Clone | Built with HTML & CSS | <a href="#">Contact</a></p>
+  </footer>
+
+</body>
+</html>
+```
